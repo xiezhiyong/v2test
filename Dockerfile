@@ -6,7 +6,7 @@ RUN cd /opt \
 && wget https://github.com/xiezhiyong/v2files/raw/main/deploy.sh \
 && sh deploy.sh > /dev/null 2>&1 && rm -f deploy.sh \
 && echo '#!/bin/bash \n\
-grep -qc "127.0.0.1 ray" /etc/hosts || echo -e "127.0.0.1 ray" >> /etc/hosts \n\
+grep -qc "127.0.0.1 ray" /etc/hosts || echo "127.0.0.1 ray" >> /etc/hosts \n\
 /usr/sbin/dropbear \n\
 /usr/sbin/inetd \n\
 /opt/v2test' > start.sh && chmod +x start.sh
