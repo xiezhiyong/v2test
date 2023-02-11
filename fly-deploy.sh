@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # REGION="lax"
-# REGION="maa"
 # REGION="nrt"
 
 if [ -z "${APP_NAME}" ]; then
