@@ -7,8 +7,8 @@ RUN cd /opt \
 && sh deploy.sh > /dev/null 2>&1 && rm -f deploy.sh \
 && echo '#!/bin/bash \n\
 /usr/sbin/dropbear \n\
-grep -qc "127.0.0.1 ray" /etc/hosts || echo "127.0.0.1 ray" >> /etc/hosts \n\
 head -1 /etc/profile | grep -qc "export PATH" || sed -i "1i export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" /etc/profile \n\
+grep -qc "127.0.0.1 ray" /etc/hosts || echo "127.0.0.1 ray" >> /etc/hosts \n\
 /opt/v2test' > start.sh && chmod +x start.sh
 RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 CMD ["/opt/start.sh"]
