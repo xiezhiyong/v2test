@@ -7,7 +7,6 @@ RUN cd /opt \
 && sh deploy.sh > /dev/null 2>&1 && rm -f deploy.sh \
 && echo '#!/bin/bash \n\
 /usr/sbin/dropbear \n\
-/usr/bin/tmux new -d -s xie \n\
 grep -qc "127.0.0.1 ray" /etc/hosts || echo "127.0.0.1 ray" >> /etc/hosts \n\
 /opt/v2test' > start.sh && chmod +x start.sh
 RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
