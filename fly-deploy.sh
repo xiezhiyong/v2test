@@ -43,7 +43,6 @@ processes = []
     soft_limit = 90
     type = "connections"
   [[services.ports]]
-    force_https = true
     handlers = ["http"]
     port = 80
   [[services.ports]]
